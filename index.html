@@ -14,43 +14,115 @@
   <meta property="og:image" content="https://tudominio.com/og-koeduko.png" />
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: 'rgb(var(--bg) / <alpha-value>)',
+            surface: 'rgb(var(--surface) / <alpha-value>)',
+            card: 'rgb(var(--card) / <alpha-value>)',
+            border: 'rgb(var(--border) / <alpha-value>)',
+            text: 'rgb(var(--text) / <alpha-value>)',
+            muted: 'rgb(var(--muted) / <alpha-value>)',
+            primary: 'rgb(var(--primary) / <alpha-value>)',
+            primary2: 'rgb(var(--primary2) / <alpha-value>)',
+            ring: 'rgb(var(--ring) / <alpha-value>)'
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    .bg-grid {
-      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 0);
-      background-size: 18px 18px;
+    :root {
+      --bg: 250 250 249;
+      --surface: 255 255 255;
+      --card: 255 255 255;
+      --border: 231 229 228;
+      --text: 28 25 23;
+      --muted: 120 113 108;
+      --primary: 249 115 22;
+      --primary2: 234 88 12;
+      --ring: 251 146 60;
+    }
+
+    .ko-bg {
+      background: linear-gradient(135deg, #fafaf9 0%, #f5f5f4 100%);
+    }
+
+    .ko-grid {
+      background-image: radial-gradient(circle at 1px 1px, rgba(120, 113, 108, 0.1) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    .ko-card {
+      background: rgb(var(--card));
+      border: 1px solid rgb(var(--border));
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      border-radius: 1rem;
+    }
+
+    .ko-btn-primary {
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      color: white;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .ko-btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+    }
+
+    .ko-btn-secondary {
+      background: white;
+      border: 1px solid rgb(var(--border));
+      color: rgb(var(--text));
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .ko-btn-secondary:hover {
+      border-color: rgb(var(--muted));
+      background: #fafaf9;
+    }
+
+    *:focus-visible {
+      outline: 2px solid rgb(var(--ring));
+      outline-offset: 2px;
     }
   </style>
 </head>
 
-<body class="bg-slate-950 text-slate-100">
+<body class="ko-bg text-text">
   <!-- Header -->
-  <header class="sticky top-0 z-50 backdrop-blur border-b border-white/10 bg-slate-950/70">
+  <header class="sticky top-0 z-50 backdrop-blur border-b border-border bg-surface/80">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <!-- Sustituye por tu logo -->
-        <div class="h-9 w-9 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center font-bold">K</div>
+        <!-- Logo corporativo: Sustituir por <img src="assets/koeduko-logo.png" alt="KOEDUKO" class="h-9 w-9 rounded-xl" /> -->
+        <div class="h-9 w-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center font-bold text-primary">K</div>
         <div class="leading-tight">
-          <div class="font-semibold">KOEDUKO</div>
-          <div class="text-xs text-slate-300">Para profes de Primaria</div>
+          <div class="font-semibold text-text">KOEDUKO</div>
+          <div class="text-xs text-muted">Para profes de Primaria</div>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-        <a class="hover:text-white" href="#como">Cómo funciona</a>
-        <a class="hover:text-white" href="#incluye">Qué incluye</a>
-        <a class="hover:text-white" href="#faq">FAQ</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-muted">
+        <a class="hover:text-text transition" href="#como">Cómo funciona</a>
+        <a class="hover:text-text transition" href="#incluye">Qué incluye</a>
+        <a class="hover:text-text transition" href="#faq">FAQ</a>
       </nav>
 
       <div class="flex items-center gap-2">
         <button
           id="accessBtnTop"
-          class="rounded-xl px-4 py-2 text-sm font-semibold border border-white/15 hover:bg-white/5"
+          class="ko-btn-secondary rounded-xl px-4 py-2 text-sm"
           type="button"
           aria-haspopup="dialog"
         >
           Acceso (próximamente)
         </button>
-        <a href="#cta" class="rounded-xl px-4 py-2 text-sm font-semibold bg-orange-500 hover:bg-orange-400 text-slate-950">
+        <a href="#cta" class="ko-btn-primary rounded-xl px-4 py-2 text-sm">
           Ver KOEDUKO
         </a>
       </div>
@@ -59,15 +131,15 @@
 
   <!-- Hero -->
   <section id="top" class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid opacity-60"></div>
-    <div class="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-orange-500/20 blur-3xl"></div>
-    <div class="absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-sky-500/20 blur-3xl"></div>
+    <div class="absolute inset-0 ko-grid"></div>
+    <div class="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-primary/5 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-primary/5 blur-3xl"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 pt-16 pb-12">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
-            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+          <div class="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-text shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
             Primaria · Actividades · Evaluación · Fichas imprimibles
           </div>
 
@@ -75,19 +147,19 @@
             Planifica y evalúa mejor, con menos tiempo.
           </h1>
 
-          <p class="mt-5 text-slate-300 text-lg leading-relaxed">
-            KOEDUKO es una app para profes de Primaria que te ayuda a <b>crear actividades listas para el aula</b>,
-            con estructura clara, y a <b>evaluar</b> de forma sencilla y coherente.
+          <p class="mt-5 text-muted text-lg leading-relaxed">
+            KOEDUKO es una app para profes de Primaria que te ayuda a <b class="text-text">crear actividades listas para el aula</b>,
+            con estructura clara, y a <b class="text-text">evaluar</b> de forma sencilla y coherente.
           </p>
 
           <div class="mt-7 flex flex-col sm:flex-row gap-3">
-            <a href="#cta" class="rounded-2xl px-5 py-3 font-semibold bg-orange-500 hover:bg-orange-400 text-slate-950 text-center">
+            <a href="#cta" class="ko-btn-primary rounded-2xl px-5 py-3 text-center">
               Ver qué hace KOEDUKO
             </a>
 
             <button
               id="accessBtnHero"
-              class="rounded-2xl px-5 py-3 font-semibold border border-white/15 hover:bg-white/5 text-center"
+              class="ko-btn-secondary rounded-2xl px-5 py-3 text-center"
               type="button"
               aria-haspopup="dialog"
             >
@@ -95,76 +167,85 @@
             </button>
           </div>
 
-          <div class="mt-7 grid grid-cols-3 gap-3 text-xs text-slate-300">
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <div class="text-white font-semibold">Ahorro real</div>
+          <div class="mt-7 grid grid-cols-3 gap-3 text-xs text-muted">
+            <div class="ko-card p-4 flex flex-col items-start">
+              <svg class="w-6 h-6 text-primary mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div class="text-text font-semibold">Ahorro real</div>
               <div class="mt-1">De idea a sesión en minutos.</div>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <div class="text-white font-semibold">Claridad</div>
+            <div class="ko-card p-4 flex flex-col items-start">
+              <svg class="w-6 h-6 text-primary mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+              </svg>
+              <div class="text-text font-semibold">Claridad</div>
               <div class="mt-1">Estructura didáctica ordenada.</div>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <div class="text-white font-semibold">Reutilizable</div>
+            <div class="ko-card p-4 flex flex-col items-start">
+              <svg class="w-6 h-6 text-primary mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>
+              <div class="text-text font-semibold">Reutilizable</div>
               <div class="mt-1">Historial y recursos exportables.</div>
             </div>
           </div>
 
-          <p class="mt-6 text-xs text-slate-400">
+          <p class="mt-6 text-xs text-muted">
             Nota: El acceso de escritorio para usuarios registrados se habilitará más adelante.
           </p>
         </div>
 
         <!-- Visual / mock -->
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
+        <div class="ko-card rounded-3xl p-6 shadow-xl">
           <div class="flex items-center justify-between">
-            <div class="text-sm font-semibold">KOEDUKO (vista ejemplo)</div>
-            <div class="text-xs text-slate-300">Actividad · Evaluación · Fichas</div>
+            <div class="text-sm font-semibold text-text">KOEDUKO (vista ejemplo)</div>
+            <div class="text-xs text-muted">Actividad · Evaluación · Fichas</div>
           </div>
 
           <div class="mt-5 space-y-4">
-            <div class="rounded-2xl border border-white/10 bg-slate-900/50 p-4">
-              <div class="text-sm font-semibold">Actividad: “Exploradores del bosque”</div>
-              <div class="mt-1 text-xs text-slate-300">
+            <div class="rounded-2xl border border-border bg-surface p-4">
+              <div class="text-sm font-semibold text-text">Actividad: "Exploradores del bosque"</div>
+              <div class="mt-1 text-xs text-muted">
                 3º Primaria · 45 min · Tipo: Juego/Proyecto corto · Áreas: Lengua + Conocimiento del Medio
               </div>
             </div>
 
-            <div class="rounded-2xl border border-white/10 bg-slate-900/50 p-4">
-              <div class="text-sm font-semibold">Evaluación rápida</div>
-              <div class="mt-2 text-xs text-slate-300">
+            <div class="rounded-2xl border border-border bg-surface p-4">
+              <div class="text-sm font-semibold text-text">Evaluación rápida</div>
+              <div class="mt-2 text-xs text-muted">
                 Criterios + indicadores observables + evidencias (listos para registrar por alumno/a).
               </div>
               <div class="mt-3 grid grid-cols-3 gap-2 text-xs">
-                <div class="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <div class="text-white font-semibold">Conseguido</div>
-                  <div class="mt-1 text-slate-300">✔</div>
+                <div class="rounded-xl border border-border bg-card p-3">
+                  <div class="text-text font-semibold">Conseguido</div>
+                  <div class="mt-1 text-muted">✔</div>
                 </div>
-                <div class="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <div class="text-white font-semibold">En proceso</div>
-                  <div class="mt-1 text-slate-300">~</div>
+                <div class="rounded-xl border border-border bg-card p-3">
+                  <div class="text-text font-semibold">En proceso</div>
+                  <div class="mt-1 text-muted">~</div>
                 </div>
-                <div class="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <div class="text-white font-semibold">Por iniciar</div>
-                  <div class="mt-1 text-slate-300">○</div>
+                <div class="rounded-xl border border-border bg-card p-3">
+                  <div class="text-text font-semibold">Por iniciar</div>
+                  <div class="mt-1 text-muted">○</div>
                 </div>
               </div>
             </div>
 
-            <div class="rounded-2xl border border-white/10 bg-slate-900/50 p-4">
-              <div class="text-sm font-semibold">Fichas imprimibles</div>
+            <div class="rounded-2xl border border-border bg-surface p-4">
+              <div class="text-sm font-semibold text-text">Fichas imprimibles</div>
               <div class="mt-2 grid grid-cols-3 gap-2">
-                <div class="h-16 rounded-xl bg-white/5 border border-white/10"></div>
-                <div class="h-16 rounded-xl bg-white/5 border border-white/10"></div>
-                <div class="h-16 rounded-xl bg-white/5 border border-white/10"></div>
+                <div class="h-16 rounded-xl bg-surface border border-border"></div>
+                <div class="h-16 rounded-xl bg-surface border border-border"></div>
+                <div class="h-16 rounded-xl bg-surface border border-border"></div>
               </div>
-              <div class="mt-2 text-xs text-slate-300">
+              <div class="mt-2 text-xs text-muted">
                 Plantillas pensadas para aula: repaso, comprensión, secuencias, etc.
               </div>
             </div>
           </div>
 
-          <div class="mt-6 text-xs text-slate-400">
+          <div class="mt-6 text-xs text-muted">
             * Elementos visuales de ejemplo. La landing no implica que el acceso escritorio esté disponible hoy.
           </div>
         </div>
@@ -174,74 +255,74 @@
 
   <!-- Cómo funciona -->
   <section id="como" class="max-w-6xl mx-auto px-4 py-14">
-    <h2 class="text-2xl md:text-3xl font-extrabold">Cómo funciona</h2>
-    <p class="mt-2 text-slate-300 max-w-2xl">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-text">Cómo funciona</h2>
+    <p class="mt-2 text-muted max-w-2xl">
       Un flujo simple para reducir carga: defines la sesión, KOEDUKO la estructura, y tú aplicas y registras.
     </p>
 
     <div class="mt-8 grid md:grid-cols-4 gap-4">
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div class="text-orange-400 font-bold">1</div>
-        <div class="mt-2 font-semibold">Define</div>
-        <div class="mt-1 text-sm text-slate-300">Curso, duración, tipo, área y objetivo general.</div>
+      <div class="ko-card rounded-3xl p-6">
+        <div class="text-primary font-bold text-xl">1</div>
+        <div class="mt-2 font-semibold text-text">Define</div>
+        <div class="mt-1 text-sm text-muted">Curso, duración, tipo, área y objetivo general.</div>
       </div>
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div class="text-orange-400 font-bold">2</div>
-        <div class="mt-2 font-semibold">Genera</div>
-        <div class="mt-1 text-sm text-slate-300">Secuencia de pasos y materiales listos para aula.</div>
+      <div class="ko-card rounded-3xl p-6">
+        <div class="text-primary font-bold text-xl">2</div>
+        <div class="mt-2 font-semibold text-text">Genera</div>
+        <div class="mt-1 text-sm text-muted">Secuencia de pasos y materiales listos para aula.</div>
       </div>
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div class="text-orange-400 font-bold">3</div>
-        <div class="mt-2 font-semibold">Evalúa</div>
-        <div class="mt-1 text-sm text-slate-300">Registro simple por alumno/a con evidencias.</div>
+      <div class="ko-card rounded-3xl p-6">
+        <div class="text-primary font-bold text-xl">3</div>
+        <div class="mt-2 font-semibold text-text">Evalúa</div>
+        <div class="mt-1 text-sm text-muted">Registro simple por alumno/a con evidencias.</div>
       </div>
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div class="text-orange-400 font-bold">4</div>
-        <div class="mt-2 font-semibold">Guarda</div>
-        <div class="mt-1 text-sm text-slate-300">Historial para reutilizar, ajustar y compartir.</div>
+      <div class="ko-card rounded-3xl p-6">
+        <div class="text-primary font-bold text-xl">4</div>
+        <div class="mt-2 font-semibold text-text">Guarda</div>
+        <div class="mt-1 text-sm text-muted">Historial para reutilizar, ajustar y compartir.</div>
       </div>
     </div>
   </section>
 
   <!-- Qué incluye -->
   <section id="incluye" class="max-w-6xl mx-auto px-4 pb-14">
-    <div class="rounded-[28px] border border-white/10 bg-white/5 p-8">
-      <h2 class="text-2xl md:text-3xl font-extrabold">Qué incluye KOEDUKO</h2>
-      <p class="mt-2 text-slate-300 max-w-3xl">
+    <div class="ko-card rounded-[28px] p-8">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-text">Qué incluye KOEDUKO</h2>
+      <p class="mt-2 text-muted max-w-3xl">
         Lo esencial para preparar sesiones de Primaria y documentar tu práctica con orden.
       </p>
 
       <div class="mt-8 grid md:grid-cols-2 gap-4">
-        <div class="rounded-3xl border border-white/10 bg-slate-900/40 p-6">
-          <div class="font-semibold">Actividades completas</div>
-          <ul class="mt-3 text-sm text-slate-300 space-y-2 list-disc pl-5">
+        <div class="rounded-3xl border border-border bg-surface p-6">
+          <div class="font-semibold text-text">Actividades completas</div>
+          <ul class="mt-3 text-sm text-muted space-y-2 list-disc pl-5">
             <li>Estructura clara: inicio, desarrollo, cierre.</li>
             <li>Materiales y organización del aula.</li>
             <li>Variantes y adaptaciones para diferentes ritmos.</li>
           </ul>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-slate-900/40 p-6">
-          <div class="font-semibold">Evaluación práctica</div>
-          <ul class="mt-3 text-sm text-slate-300 space-y-2 list-disc pl-5">
+        <div class="rounded-3xl border border-border bg-surface p-6">
+          <div class="font-semibold text-text">Evaluación práctica</div>
+          <ul class="mt-3 text-sm text-muted space-y-2 list-disc pl-5">
             <li>Criterios e indicadores observables.</li>
             <li>Evidencias concretas para registrar.</li>
             <li>Notas rápidas y observaciones.</li>
           </ul>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-slate-900/40 p-6">
-          <div class="font-semibold">Fichas imprimibles</div>
-          <ul class="mt-3 text-sm text-slate-300 space-y-2 list-disc pl-5">
+        <div class="rounded-3xl border border-border bg-surface p-6">
+          <div class="font-semibold text-text">Fichas imprimibles</div>
+          <ul class="mt-3 text-sm text-muted space-y-2 list-disc pl-5">
             <li>Actividades para refuerzo y consolidación.</li>
             <li>Formato preparado para imprimir.</li>
             <li>Guía breve para el docente.</li>
           </ul>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-slate-900/40 p-6">
-          <div class="font-semibold">Historial</div>
-          <ul class="mt-3 text-sm text-slate-300 space-y-2 list-disc pl-5">
+        <div class="rounded-3xl border border-border bg-surface p-6">
+          <div class="font-semibold text-text">Historial</div>
+          <ul class="mt-3 text-sm text-muted space-y-2 list-disc pl-5">
             <li>Accede a tus actividades pasadas.</li>
             <li>Duplica y adapta en segundos.</li>
             <li>Construye tu banco de recursos.</li>
@@ -253,21 +334,21 @@
 
   <!-- CTA -->
   <section id="cta" class="max-w-6xl mx-auto px-4 pb-16">
-    <div class="rounded-[32px] border border-white/10 bg-gradient-to-br from-orange-500/20 via-white/5 to-sky-500/20 p-10">
-      <h2 class="text-3xl font-extrabold">KOEDUKO para profes de Primaria</h2>
-      <p class="mt-2 text-slate-200 max-w-2xl">
+    <div class="ko-card rounded-[32px] p-10 bg-gradient-to-br from-primary/5 to-primary/10">
+      <h2 class="text-3xl font-extrabold text-text">KOEDUKO para profes de Primaria</h2>
+      <p class="mt-2 text-muted max-w-2xl">
         Landing de presentación. El acceso de escritorio para usuarios registrados se habilitará más adelante.
       </p>
 
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <!-- Sustituye por tu enlace real (Play Store / web pública / listado) -->
-        <a href="#" class="rounded-2xl px-6 py-3 font-semibold bg-orange-500 hover:bg-orange-400 text-slate-950 text-center">
+        <a href="#" class="ko-btn-primary rounded-2xl px-6 py-3 text-center">
           Conocer KOEDUKO
         </a>
 
         <button
           id="accessBtnCta"
-          class="rounded-2xl px-6 py-3 font-semibold border border-white/15 hover:bg-white/5 text-center"
+          class="ko-btn-secondary rounded-2xl px-6 py-3 text-center"
           type="button"
           aria-haspopup="dialog"
         >
@@ -275,7 +356,7 @@
         </button>
       </div>
 
-      <div class="mt-6 text-xs text-slate-200/80">
+      <div class="mt-6 text-xs text-muted">
         Tip: aquí puedes enlazar a tu ficha de Play Store cuando esté publicada.
       </div>
     </div>
@@ -283,33 +364,33 @@
 
   <!-- FAQ -->
   <section id="faq" class="max-w-6xl mx-auto px-4 pb-14">
-    <h2 class="text-2xl md:text-3xl font-extrabold">Preguntas frecuentes</h2>
+    <h2 class="text-2xl md:text-3xl font-extrabold text-text">Preguntas frecuentes</h2>
 
     <div class="mt-8 grid md:grid-cols-2 gap-4">
-      <details class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <summary class="cursor-pointer font-semibold">¿Es una plataforma web?</summary>
-        <div class="mt-2 text-sm text-slate-300">
+      <details class="ko-card rounded-3xl p-6">
+        <summary class="cursor-pointer font-semibold text-text">¿Es una plataforma web?</summary>
+        <div class="mt-2 text-sm text-muted">
           KOEDUKO es una app. Además, habrá un acceso de escritorio para usuarios registrados, pero por ahora está inactivo.
         </div>
       </details>
 
-      <details class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <summary class="cursor-pointer font-semibold">¿Sirve para cualquier área?</summary>
-        <div class="mt-2 text-sm text-slate-300">
+      <details class="ko-card rounded-3xl p-6">
+        <summary class="cursor-pointer font-semibold text-text">¿Sirve para cualquier área?</summary>
+        <div class="mt-2 text-sm text-muted">
           Está pensado para el trabajo habitual de Primaria y para adaptar la planificación a distintas áreas.
         </div>
       </details>
 
-      <details class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <summary class="cursor-pointer font-semibold">¿Puedo imprimir materiales?</summary>
-        <div class="mt-2 text-sm text-slate-300">
+      <details class="ko-card rounded-3xl p-6">
+        <summary class="cursor-pointer font-semibold text-text">¿Puedo imprimir materiales?</summary>
+        <div class="mt-2 text-sm text-muted">
           Sí, la idea es contar con fichas y materiales listos para imprimir y usar en clase.
         </div>
       </details>
 
-      <details class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <summary class="cursor-pointer font-semibold">¿Cuándo estará el acceso de escritorio?</summary>
-        <div class="mt-2 text-sm text-slate-300">
+      <details class="ko-card rounded-3xl p-6">
+        <summary class="cursor-pointer font-semibold text-text">¿Cuándo estará el acceso de escritorio?</summary>
+        <div class="mt-2 text-sm text-muted">
           Próximamente. En esta landing el botón de acceso es informativo y no abre sesión todavía.
         </div>
       </details>
@@ -317,35 +398,35 @@
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-slate-400 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+  <footer class="border-t border-border">
+    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-muted flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
       <div>© <span id="y"></span> KOEDUKO. Todos los derechos reservados.</div>
       <div class="flex gap-4">
-        <a class="hover:text-white" href="#top">Inicio</a>
-        <a class="hover:text-white" href="#faq">FAQ</a>
-        <button id="accessBtnFooter" class="hover:text-white" type="button">Acceso (próximamente)</button>
+        <a class="hover:text-text transition" href="#top">Inicio</a>
+        <a class="hover:text-text transition" href="#faq">FAQ</a>
+        <button id="accessBtnFooter" class="hover:text-text transition" type="button">Acceso (próximamente)</button>
       </div>
     </div>
   </footer>
 
   <!-- Modal (solo informativo, sin login) -->
   <div id="accessModal" class="fixed inset-0 hidden items-center justify-center p-4">
-    <div class="absolute inset-0 bg-black/70"></div>
-    <div class="relative w-full max-w-lg rounded-3xl border border-white/10 bg-slate-950 p-6 shadow-2xl">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-lg ko-card rounded-3xl p-6 shadow-2xl">
       <div class="flex items-start justify-between gap-4">
         <div>
-          <div class="text-lg font-extrabold">Acceso de escritorio (próximamente)</div>
-          <div class="mt-2 text-sm text-slate-300">
-            Este acceso está reservado para usuarios registrados, pero <b>todavía no está activo</b>.
+          <div class="text-lg font-extrabold text-text">Acceso de escritorio (próximamente)</div>
+          <div class="mt-2 text-sm text-muted">
+            Este acceso está reservado para usuarios registrados, pero <b class="text-text">todavía no está activo</b>.
             La landing es solo de presentación.
           </div>
         </div>
-        <button id="closeModal" class="rounded-xl px-3 py-2 border border-white/15 hover:bg-white/5" type="button">
+        <button id="closeModal" class="ko-btn-secondary rounded-xl px-3 py-2" type="button">
           Cerrar
         </button>
       </div>
 
-      <div class="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-300">
+      <div class="mt-5 rounded-2xl border border-border bg-surface p-4 text-sm text-muted">
         Cuando lo habilitemos, aquí podrás usar KOEDUKO en versión escritorio con tu cuenta.
       </div>
     </div>

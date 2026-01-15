@@ -1,465 +1,200 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KOEDUKO — Actividades y evaluación para Primaria (LOMLOE)</title>
-  <meta name="description" content="KOEDUKO ayuda a profes de Primaria a crear actividades listas para el aula y evaluar con claridad. Próximamente: acceso escritorio para usuarios registrados (inactivo)." />
-  <meta name="robots" content="index,follow" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <meta property="og:title" content="KOEDUKO — Actividades y evaluación para Primaria" />
-  <meta property="og:description" content="Crea actividades y evalúa con claridad. Próximamente: acceso escritorio para usuarios registrados." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tudominio.com" />
-  <meta property="og:image" content="https://tudominio.com/og-koeduko.png" />
+    <title>KOEDUKO | Actividades LOMLOE para docentes de Primaria</title>
+    <meta
+      name="description"
+      content="KOEDUKO es una app para docentes de Educación Primaria que permite crear actividades LOMLOE, adaptadas a la diversidad y listas para el aula."
+    />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            bg: 'rgb(var(--bg) / <alpha-value>)',
-            surface: 'rgb(var(--surface) / <alpha-value>)',
-            card: 'rgb(var(--card) / <alpha-value>)',
-            border: 'rgb(var(--border) / <alpha-value>)',
-            text: 'rgb(var(--text) / <alpha-value>)',
-            muted: 'rgb(var(--muted) / <alpha-value>)',
-            primary: 'rgb(var(--primary) / <alpha-value>)',
-            primary2: 'rgb(var(--primary2) / <alpha-value>)',
-            ring: 'rgb(var(--ring) / <alpha-value>)'
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    :root {
-      --bg: 250 250 249;
-      --surface: 255 255 255;
-      --card: 255 255 255;
-      --border: 231 229 228;
-      --text: 28 25 23;
-      --muted: 120 113 108;
-      --primary: 249 115 22;
-      --primary2: 234 88 12;
-      --ring: 251 146 60;
-    }
+    <meta property="og:title" content="KOEDUKO · Planificación docente en Primaria" />
+    <meta
+      property="og:description"
+      content="Actividades LOMLOE claras, adaptadas y descargables para profes de Primaria."
+    />
+    <meta property="og:image" content="/assets/img/koeduko-logo-rect.png" />
 
-    .ko-bg {
-      background: linear-gradient(135deg, #fafaf9 0%, #f5f5f4 100%);
-    }
+    <link rel="icon" href="/assets/img/ko-logo-circular.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
 
-    .ko-grid {
-      background-image: radial-gradient(circle at 1px 1px, rgba(120, 113, 108, 0.1) 1px, transparent 0);
-      background-size: 24px 24px;
-    }
-
-    .ko-card {
-      background: rgb(var(--card));
-      border: 1px solid rgb(var(--border));
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-      border-radius: 1rem;
-    }
-
-    .ko-btn-primary {
-      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-      color: white;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-
-    .ko-btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
-    }
-
-    .ko-btn-secondary {
-      background: white;
-      border: 1px solid rgb(var(--border));
-      color: rgb(var(--text));
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-
-    .ko-btn-secondary:hover {
-      border-color: rgb(var(--muted));
-      background: #fafaf9;
-    }
-
-    *:focus-visible {
-      outline: 2px solid rgb(var(--ring));
-      outline-offset: 2px;
-    }
-  </style>
-</head>
-
-<body class="ko-bg text-text">
-  <!-- Header -->
-  <header class="sticky top-0 z-50 backdrop-blur border-b border-border bg-surface/80">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-3">
-        <!-- Logo corporativo: Sustituir por <img src="assets/koeduko-logo.png" alt="KOEDUKO" class="h-9 w-9 rounded-xl" /> -->
-        <div class="h-9 w-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center font-bold text-primary">K</div>
-        <div class="leading-tight">
-          <div class="font-semibold text-text">KOEDUKO</div>
-          <div class="text-xs text-muted">Para profes de Primaria</div>
-        </div>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-6 text-sm text-muted">
-        <a class="hover:text-text transition" href="#como">Cómo funciona</a>
-        <a class="hover:text-text transition" href="#incluye">Qué incluye</a>
-        <a class="hover:text-text transition" href="#faq">FAQ</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <button
-          id="accessBtnTop"
-          class="ko-btn-secondary rounded-xl px-4 py-2 text-sm"
-          type="button"
-          aria-haspopup="dialog"
-        >
-          Acceso (próximamente)
-        </button>
-        <a href="#cta" class="ko-btn-primary rounded-xl px-4 py-2 text-sm">
-          Ver KOEDUKO
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <img class="brand-logo" src="/assets/img/koeduko-logo-rect.png" alt="KOEDUKO" />
+        <a class="ig-link" href="https://www.instagram.com/koeduko/" target="_blank" rel="noreferrer">
+          Instagram @koeduko
         </a>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Hero -->
-  <section id="top" class="relative overflow-hidden">
-    <div class="absolute inset-0 ko-grid"></div>
-    <div class="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-primary/5 blur-3xl"></div>
-    <div class="absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-primary/5 blur-3xl"></div>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1>Planifica, adapta y evalúa actividades LOMLOE en minutos.</h1>
+            <p class="lead">
+              KOEDUKO es una app pensada para <strong>docentes de Educación Primaria</strong> que necesitan
+              actividades claras, alineadas con el currículo y listas para el aula.
+            </p>
 
-    <div class="relative max-w-6xl mx-auto px-4 pt-16 pb-12">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <div class="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-text shadow-sm">
-            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-            Primaria · Actividades · Evaluación · Fichas imprimibles
+            <ul class="pill-row">
+              <li>Diseñada por docentes</li>
+              <li>Enfoque práctico</li>
+              <li>Para el día a día en clase</li>
+            </ul>
+
+            <div class="cta-row">
+              <a class="btn primary" href="#" aria-disabled="true">
+                📲 Descargar KOEDUKO para profes (Android)
+              </a>
+
+              <button class="btn disabled" disabled>
+                🍎 Versión iOS · disponible en junio de 2026
+              </button>
+            </div>
+
+            <p class="micro-cta">
+              Empieza hoy a ahorrar tiempo en la planificación y gana seguridad curricular en tu práctica docente.
+              <br />
+              ¿Novedades y versión iOS? <a href="https://www.instagram.com/koeduko/" target="_blank" rel="noreferrer">Síguenos en Instagram → @koeduko</a>
+            </p>
           </div>
 
-          <h1 class="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight">
-            Planifica y evalúa mejor, con menos tiempo.
-          </h1>
+          <div class="hero-media">
+            <div class="shots">
+              <figure class="shot">
+                <img src="/assets/img/screenshot-historial.jpg" alt="Captura de KOEDUKO: historial de actividades" />
+                <figcaption>Historial de actividades</figcaption>
+              </figure>
 
-          <p class="mt-5 text-muted text-lg leading-relaxed">
-            KOEDUKO es una app para profes de Primaria que te ayuda a <b class="text-text">crear actividades listas para el aula</b>,
-            con estructura clara, y a <b class="text-text">evaluar</b> de forma sencilla y coherente.
+              <figure class="shot">
+                <img src="/assets/img/screenshot-generando.jpg" alt="Captura de KOEDUKO: generando actividad" />
+                <figcaption>Generación guiada</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEMA / SOLUCIÓN -->
+      <section class="section">
+        <div class="container">
+          <h2>¿Te suena esto?</h2>
+          <div class="grid-2">
+            <ul class="list">
+              <li>Poco tiempo para planificar con rigor</li>
+              <li>Dudas sobre cómo aplicar la LOMLOE en el aula</li>
+              <li>Atención a la diversidad difícil de reflejar por escrito</li>
+              <li>Mucha teoría, poco material realmente usable</li>
+            </ul>
+
+            <div class="card">
+              <h3>La solución</h3>
+              <p>
+                KOEDUKO transforma la normativa educativa en <strong>actividades comprensibles, aplicables y bien documentadas</strong>,
+                pensadas para facilitar el trabajo del profesorado, no para complicarlo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUÉ HACE -->
+      <section class="section alt">
+        <div class="container">
+          <h2>¿Qué puedes hacer con KOEDUKO?</h2>
+          <div class="grid-2">
+            <ul class="list">
+              <li>Crear actividades para Educación Primaria alineadas con LOMLOE</li>
+              <li>Incluir adaptaciones para ACNEAE reflejadas en documentos</li>
+              <li>Descargar PDFs listos para aula, seguimiento o informes</li>
+              <li>Trabajar con criterios, saberes y enfoque competencial sin perder tiempo</li>
+              <li>Herramienta sencilla, pensada para docentes</li>
+            </ul>
+
+            <div class="card">
+              <h3>Kopiloto, tu asistente pedagógico</h3>
+              <p>
+                <strong>Kopiloto</strong> te guía paso a paso en la creación de actividades y en la adaptación de contenidos,
+                ayudándote a tomar decisiones pedagógicas con mayor seguridad y coherencia curricular.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARA QUIÉN -->
+      <section class="section">
+        <div class="container">
+          <h2>Para quién es KOEDUKO</h2>
+          <div class="grid-2">
+            <div class="card">
+              <h3>Pensado para</h3>
+              <ul class="list">
+                <li>Docentes de Educación Primaria</li>
+                <li>Tutorías, áreas, refuerzo y apoyo</li>
+                <li>Quien busca tranquilidad curricular y menos carga burocrática</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>No es (por ahora)</h3>
+              <ul class="list">
+                <li>Una plataforma de gestión de centros</li>
+                <li>Un sistema administrativo</li>
+                <li>Un sustituto de la programación oficial del centro</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSTITUCIONES -->
+      <section class="section alt">
+        <div class="container">
+          <h2>¿Eres un centro educativo o una institución?</h2>
+          <p class="lead">
+            KOEDUKO está desarrollando líneas específicas para proyectos de centro y programas educativos institucionales.
           </p>
 
-          <div class="mt-7 flex flex-col sm:flex-row gap-3">
-            <a href="#cta" class="ko-btn-primary rounded-2xl px-5 py-3 text-center">
-              Ver qué hace KOEDUKO
+          <div class="card">
+            <h3>Contacto (pilotos / información)</h3>
+            <form action="mailto:santiagoblas.escritor@gmail.com" method="post" enctype="text/plain" class="form">
+              <input name="nombre" placeholder="Nombre" required />
+              <input name="email" type="email" placeholder="Email" required />
+              <textarea name="mensaje" rows="5" placeholder="Cuéntame qué necesitas (curso, centro, objetivo...)"></textarea>
+              <button class="btn primary" type="submit">Enviar</button>
+              <p class="hint">Se abrirá tu gestor de correo para enviar el mensaje.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="section">
+        <div class="container footer-cta">
+          <img class="footer-logo" src="/assets/img/ko-logo-circular.jpg" alt="KOEDUKO" />
+          <div>
+            <h2>¿Quieres seguir las novedades?</h2>
+            <p class="lead">Ideas, mejoras y avisos importantes (incluida iOS).</p>
+            <a class="btn outline" href="https://www.instagram.com/koeduko/" target="_blank" rel="noreferrer">
+              Seguir @koeduko en Instagram
             </a>
-
-            <button
-              id="accessBtnHero"
-              class="ko-btn-secondary rounded-2xl px-5 py-3 text-center"
-              type="button"
-              aria-haspopup="dialog"
-            >
-              Acceso escritorio (próximamente)
-            </button>
-          </div>
-
-          <div class="mt-7 grid grid-cols-3 gap-3 text-xs text-muted">
-            <div class="ko-card p-4 flex flex-col items-start">
-              <svg class="w-6 h-6 text-primary mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <div class="text-text font-semibold">Ahorro real</div>
-              <div class="mt-1">De idea a sesión en minutos.</div>
-            </div>
-            <div class="ko-card p-4 flex flex-col items-start">
-              <svg class="w-6 h-6 text-primary mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-              </svg>
-              <div class="text-text font-semibold">Claridad</div>
-              <div class="mt-1">Estructura didáctica ordenada.</div>
-            </div>
-            <div class="ko-card p-4 flex flex-col items-start">
-              <svg class="w-6 h-6 text-primary mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-              </svg>
-              <div class="text-text font-semibold">Reutilizable</div>
-              <div class="mt-1">Historial y recursos exportables.</div>
-            </div>
-          </div>
-
-          <p class="mt-6 text-xs text-muted">
-            Nota: El acceso de escritorio para usuarios registrados se habilitará más adelante.
-          </p>
-        </div>
-
-        <!-- Visual / mock -->
-        <div class="ko-card rounded-3xl p-6 shadow-xl">
-          <div class="flex items-center justify-between">
-            <div class="text-sm font-semibold text-text">KOEDUKO (vista ejemplo)</div>
-            <div class="text-xs text-muted">Actividad · Evaluación · Fichas</div>
-          </div>
-
-          <div class="mt-5 space-y-4">
-            <div class="rounded-2xl border border-border bg-surface p-4">
-              <div class="text-sm font-semibold text-text">Actividad: "Exploradores del bosque"</div>
-              <div class="mt-1 text-xs text-muted">
-                3º Primaria · 45 min · Tipo: Juego/Proyecto corto · Áreas: Lengua + Conocimiento del Medio
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-border bg-surface p-4">
-              <div class="text-sm font-semibold text-text">Evaluación rápida</div>
-              <div class="mt-2 text-xs text-muted">
-                Criterios + indicadores observables + evidencias (listos para registrar por alumno/a).
-              </div>
-              <div class="mt-3 grid grid-cols-3 gap-2 text-xs">
-                <div class="rounded-xl border border-border bg-card p-3">
-                  <div class="text-text font-semibold">Conseguido</div>
-                  <div class="mt-1 text-muted">✔</div>
-                </div>
-                <div class="rounded-xl border border-border bg-card p-3">
-                  <div class="text-text font-semibold">En proceso</div>
-                  <div class="mt-1 text-muted">~</div>
-                </div>
-                <div class="rounded-xl border border-border bg-card p-3">
-                  <div class="text-text font-semibold">Por iniciar</div>
-                  <div class="mt-1 text-muted">○</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-border bg-surface p-4">
-              <div class="text-sm font-semibold text-text">Fichas imprimibles</div>
-              <div class="mt-2 grid grid-cols-3 gap-2">
-                <div class="h-16 rounded-xl bg-surface border border-border"></div>
-                <div class="h-16 rounded-xl bg-surface border border-border"></div>
-                <div class="h-16 rounded-xl bg-surface border border-border"></div>
-              </div>
-              <div class="mt-2 text-xs text-muted">
-                Plantillas pensadas para aula: repaso, comprensión, secuencias, etc.
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6 text-xs text-muted">
-            * Elementos visuales de ejemplo. La landing no implica que el acceso escritorio esté disponible hoy.
           </div>
         </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>© KOEDUKO</span>
+        <span><a href="mailto:santiagoblas.escritor@gmail.com">santiagoblas.escritor@gmail.com</a></span>
       </div>
-    </div>
-  </section>
-
-  <!-- Cómo funciona -->
-  <section id="como" class="max-w-6xl mx-auto px-4 py-14">
-    <h2 class="text-2xl md:text-3xl font-extrabold text-text">Cómo funciona</h2>
-    <p class="mt-2 text-muted max-w-2xl">
-      Un flujo simple para reducir carga: defines la sesión, KOEDUKO la estructura, y tú aplicas y registras.
-    </p>
-
-    <div class="mt-8 grid md:grid-cols-4 gap-4">
-      <div class="ko-card rounded-3xl p-6">
-        <div class="text-primary font-bold text-xl">1</div>
-        <div class="mt-2 font-semibold text-text">Define</div>
-        <div class="mt-1 text-sm text-muted">Curso, duración, tipo, área y objetivo general.</div>
-      </div>
-      <div class="ko-card rounded-3xl p-6">
-        <div class="text-primary font-bold text-xl">2</div>
-        <div class="mt-2 font-semibold text-text">Genera</div>
-        <div class="mt-1 text-sm text-muted">Secuencia de pasos y materiales listos para aula.</div>
-      </div>
-      <div class="ko-card rounded-3xl p-6">
-        <div class="text-primary font-bold text-xl">3</div>
-        <div class="mt-2 font-semibold text-text">Evalúa</div>
-        <div class="mt-1 text-sm text-muted">Registro simple por alumno/a con evidencias.</div>
-      </div>
-      <div class="ko-card rounded-3xl p-6">
-        <div class="text-primary font-bold text-xl">4</div>
-        <div class="mt-2 font-semibold text-text">Guarda</div>
-        <div class="mt-1 text-sm text-muted">Historial para reutilizar, ajustar y compartir.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Qué incluye -->
-  <section id="incluye" class="max-w-6xl mx-auto px-4 pb-14">
-    <div class="ko-card rounded-[28px] p-8">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-text">Qué incluye KOEDUKO</h2>
-      <p class="mt-2 text-muted max-w-3xl">
-        Lo esencial para preparar sesiones de Primaria y documentar tu práctica con orden.
-      </p>
-
-      <div class="mt-8 grid md:grid-cols-2 gap-4">
-        <div class="rounded-3xl border border-border bg-surface p-6">
-          <div class="font-semibold text-text">Actividades completas</div>
-          <ul class="mt-3 text-sm text-muted space-y-2 list-disc pl-5">
-            <li>Estructura clara: inicio, desarrollo, cierre.</li>
-            <li>Materiales y organización del aula.</li>
-            <li>Variantes y adaptaciones para diferentes ritmos.</li>
-          </ul>
-        </div>
-
-        <div class="rounded-3xl border border-border bg-surface p-6">
-          <div class="font-semibold text-text">Evaluación práctica</div>
-          <ul class="mt-3 text-sm text-muted space-y-2 list-disc pl-5">
-            <li>Criterios e indicadores observables.</li>
-            <li>Evidencias concretas para registrar.</li>
-            <li>Notas rápidas y observaciones.</li>
-          </ul>
-        </div>
-
-        <div class="rounded-3xl border border-border bg-surface p-6">
-          <div class="font-semibold text-text">Fichas imprimibles</div>
-          <ul class="mt-3 text-sm text-muted space-y-2 list-disc pl-5">
-            <li>Actividades para refuerzo y consolidación.</li>
-            <li>Formato preparado para imprimir.</li>
-            <li>Guía breve para el docente.</li>
-          </ul>
-        </div>
-
-        <div class="rounded-3xl border border-border bg-surface p-6">
-          <div class="font-semibold text-text">Historial</div>
-          <ul class="mt-3 text-sm text-muted space-y-2 list-disc pl-5">
-            <li>Accede a tus actividades pasadas.</li>
-            <li>Duplica y adapta en segundos.</li>
-            <li>Construye tu banco de recursos.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section id="cta" class="max-w-6xl mx-auto px-4 pb-16">
-    <div class="ko-card rounded-[32px] p-10 bg-gradient-to-br from-primary/5 to-primary/10">
-      <h2 class="text-3xl font-extrabold text-text">KOEDUKO para profes de Primaria</h2>
-      <p class="mt-2 text-muted max-w-2xl">
-        Landing de presentación. El acceso de escritorio para usuarios registrados se habilitará más adelante.
-      </p>
-
-      <div class="mt-6 flex flex-col sm:flex-row gap-3">
-        <!-- Sustituye por tu enlace real (Play Store / web pública / listado) -->
-        <a href="#" class="ko-btn-primary rounded-2xl px-6 py-3 text-center">
-          Conocer KOEDUKO
-        </a>
-
-        <button
-          id="accessBtnCta"
-          class="ko-btn-secondary rounded-2xl px-6 py-3 text-center"
-          type="button"
-          aria-haspopup="dialog"
-        >
-          Acceso escritorio (próximamente)
-        </button>
-      </div>
-
-      <div class="mt-6 text-xs text-muted">
-        Tip: aquí puedes enlazar a tu ficha de Play Store cuando esté publicada.
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="max-w-6xl mx-auto px-4 pb-14">
-    <h2 class="text-2xl md:text-3xl font-extrabold text-text">Preguntas frecuentes</h2>
-
-    <div class="mt-8 grid md:grid-cols-2 gap-4">
-      <details class="ko-card rounded-3xl p-6">
-        <summary class="cursor-pointer font-semibold text-text">¿Es una plataforma web?</summary>
-        <div class="mt-2 text-sm text-muted">
-          KOEDUKO es una app. Además, habrá un acceso de escritorio para usuarios registrados, pero por ahora está inactivo.
-        </div>
-      </details>
-
-      <details class="ko-card rounded-3xl p-6">
-        <summary class="cursor-pointer font-semibold text-text">¿Sirve para cualquier área?</summary>
-        <div class="mt-2 text-sm text-muted">
-          Está pensado para el trabajo habitual de Primaria y para adaptar la planificación a distintas áreas.
-        </div>
-      </details>
-
-      <details class="ko-card rounded-3xl p-6">
-        <summary class="cursor-pointer font-semibold text-text">¿Puedo imprimir materiales?</summary>
-        <div class="mt-2 text-sm text-muted">
-          Sí, la idea es contar con fichas y materiales listos para imprimir y usar en clase.
-        </div>
-      </details>
-
-      <details class="ko-card rounded-3xl p-6">
-        <summary class="cursor-pointer font-semibold text-text">¿Cuándo estará el acceso de escritorio?</summary>
-        <div class="mt-2 text-sm text-muted">
-          Próximamente. En esta landing el botón de acceso es informativo y no abre sesión todavía.
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-border">
-    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-muted flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <div>© <span id="y"></span> KOEDUKO. Todos los derechos reservados.</div>
-      <div class="flex gap-4">
-        <a class="hover:text-text transition" href="#top">Inicio</a>
-        <a class="hover:text-text transition" href="#faq">FAQ</a>
-        <button id="accessBtnFooter" class="hover:text-text transition" type="button">Acceso (próximamente)</button>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Modal (solo informativo, sin login) -->
-  <div id="accessModal" class="fixed inset-0 hidden items-center justify-center p-4">
-    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-lg ko-card rounded-3xl p-6 shadow-2xl">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <div class="text-lg font-extrabold text-text">Acceso de escritorio (próximamente)</div>
-          <div class="mt-2 text-sm text-muted">
-            Este acceso está reservado para usuarios registrados, pero <b class="text-text">todavía no está activo</b>.
-            La landing es solo de presentación.
-          </div>
-        </div>
-        <button id="closeModal" class="ko-btn-secondary rounded-xl px-3 py-2" type="button">
-          Cerrar
-        </button>
-      </div>
-
-      <div class="mt-5 rounded-2xl border border-border bg-surface p-4 text-sm text-muted">
-        Cuando lo habilitemos, aquí podrás usar KOEDUKO en versión escritorio con tu cuenta.
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Año
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Modal informativo (sin login)
-    const modal = document.getElementById("accessModal");
-    const openButtons = ["accessBtnTop", "accessBtnHero", "accessBtnCta", "accessBtnFooter"]
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
-
-    function openModal() {
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-    }
-
-    function closeModal() {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-    }
-
-    openButtons.forEach(btn => btn.addEventListener("click", openModal));
-    document.getElementById("closeModal").addEventListener("click", closeModal);
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeModal();
-    });
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
-    });
-  </script>
-</body>
+    </footer>
+  </body>
 </html>

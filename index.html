@@ -1,161 +1,352 @@
-<! doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-    <title>KOEDUKO | Actividades LOMLOE para docentes de Primaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KOEDUKO — Genera actividades LOMLOE en minutos</title>
     <meta
       name="description"
-      content="KOEDUKO es una app para docentes de Educación Primaria que permite crear actividades LOMLOE, adaptadas a la diversidad y listas para el aula."
+      content="KOEDUKO ayuda a docentes de Primaria a generar actividades alineadas con LOMLOE y currículo, con fichas imprimibles y evaluación, en minutos."
     />
 
-    <meta property="og:title" content="KOEDUKO · Planificación docente en Primaria" />
-    <meta
-      property="og:description"
-      content="Actividades LOMLOE claras, adaptadas y descargables para profes de Primaria."
-    />
-    <meta property="og:image" content="/assets/web/Koeduko_logo_rect.png" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="KOEDUKO — Genera actividades LOMLOE en minutos" />
+    <meta property="og:description" content="Actividades, fichas y evaluación. Rigor curricular sin perder tiempo." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://koeduko.com" />
 
-    <link rel="icon" href="/assets/favicons/KO_favicon_2. png" />
-    <link rel="stylesheet" href="/styles. css" />
+    <!-- Tailwind CDN (rápido y MVP-friendly) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              koOrange: "#ff6b35",
+              koInk: "#0f172a",
+              koMuted: "#475569",
+              koBg: "#0b1220",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Suaviza scroll + evita saltos */
+      html { scroll-behavior: smooth; }
+      .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.06); }
+      .ring-soft { box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset; }
+    </style>
   </head>
 
-  <body>
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <img class="brand-logo" src="/assets/web/Koeduko_logo_rect.png" alt="KOEDUKO" />
-        <a class="ig-link" href="https://www.instagram.com/koeduko/" target="_blank" rel="noreferrer">
-          Instagram @koeduko
+  <body class="bg-koBg text-white antialiased">
+    <!-- Top bar -->
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-koBg/80 glass">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="#top" class="flex items-center gap-2">
+          <!-- Sustituye por tu logo: /assets/koeduko-logo.png -->
+          <div class="h-9 w-9 rounded-xl bg-white/10 ring-soft grid place-items-center">
+            <span class="text-lg">K</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-semibold tracking-tight">KOEDUKO</div>
+            <div class="text-xs text-white/70">Actividades LOMLOE en minutos</div>
+          </div>
         </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
+          <a class="hover:text-white" href="#como-funciona">Cómo funciona</a>
+          <a class="hover:text-white" href="#para-quien">Para quién</a>
+          <a class="hover:text-white" href="#diferencial">Diferencial</a>
+          <a class="hover:text-white" href="#faq">FAQ</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <a
+            href="https://www.instagram.com/koeduko/"
+            target="_blank"
+            rel="noreferrer"
+            class="hidden sm:inline-flex rounded-xl px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 ring-soft"
+          >
+            Instagram
+          </a>
+          <a
+            href="#cta"
+            class="inline-flex items-center justify-center rounded-xl bg-koOrange px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+          >
+            Probar (BETA)
+          </a>
+        </div>
       </div>
     </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="container hero-content">
-          <img class="hero-logo" src="/assets/web/Koeduko_logo_rect. png" alt="KOEDUKO" />
-          
-          <h1>Crea actividades LOMLOE listas para usar en Primaria</h1>
-          
-          <p class="hero-subtitle">
-            Planificación docente alineada con la LOMLOE, atención a la diversidad y evaluación competencial, en minutos.
-          </p>
+    <!-- Hero -->
+    <main id="top" class="relative">
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <div class="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-koOrange/25 blur-3xl"></div>
+        <div class="absolute top-40 right-10 h-[380px] w-[380px] rounded-full bg-white/10 blur-3xl"></div>
+      </div>
 
-          <div class="cta-row">
-            <a class="btn primary" href="#" aria-disabled="true">
-              Próximamente en Android
-            </a>
-
-            <button class="btn disabled" disabled>
-              iOS disponible en junio de 2026
-            </button>
-          </div>
-
-          <p class="hero-note">
-            KOEDUKO está en evolución constante junto a docentes de Primaria. 
-          </p>
-        </div>
-      </section>
-
-      <!-- ¿QUÉ ES KOEDUKO? -->
-      <section class="section">
-        <div class="container">
-          <div class="feature-grid">
-            <div class="feature-text">
-              <h2>¿Qué es KOEDUKO?</h2>
-              <p class="feature-description">
-                KOEDUKO es una herramienta digital que ayuda al profesorado de Primaria a crear, adaptar y evaluar actividades educativas alineadas con la LOMLOE, listas para llevar al aula.
-              </p>
-            </div>
-            <div class="feature-image">
-              <img src="/assets/web/Actividad_LOMLOE_KOEDUKO.png" alt="Actividad LOMLOE en KOEDUKO" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ¿QUÉ PUEDES HACER?  -->
-      <section class="section alt">
-        <div class="container">
-          <h2>¿Qué puedes hacer con KOEDUKO?</h2>
-          <ul class="benefits-list">
-            <li>✓ Crear actividades alineadas con la LOMLOE</li>
-            <li>✓ Adaptar actividades a la diversidad del aula</li>
-            <li>✓ Generar actividades multinivel</li>
-            <li>✓ Obtener documentos listos para imprimir o compartir</li>
-            <li>✓ Ahorrar tiempo en la planificación docente</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- KOPILOTO -->
-      <section class="section">
-        <div class="container">
-          <div class="feature-grid reverse">
-            <div class="feature-image">
-              <img src="/assets/web/koeduko_pantalla_gen.png" alt="Kopiloto en acción" />
-            </div>
-            <div class="feature-text">
-              <h2>Kopiloto:  tu asistente pedagógico</h2>
-              <p class="feature-description">
-                Kopiloto te guía paso a paso para crear actividades educativas coherentes, completas y alineadas con el currículo oficial, incluso aunque no tengas todo claro desde el inicio.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ESTADO Y CTA -->
-      <section class="section cta-section">
-        <div class="container">
-          <div class="cta-box">
-            <h2>KOEDUKO está creciendo junto a docentes reales</h2>
-            <p class="cta-text">
-              Muy pronto podrás usarlo en tu día a día en el aula.
+      <section class="mx-auto max-w-6xl px-4 pt-14 pb-10 md:pt-20">
+        <div class="grid gap-10 md:grid-cols-2 md:items-center">
+          <div>
+            <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs text-white/80 ring-soft">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              BETA · Enfoque: Primaria (Navarra) · Rigor LOMLOE
             </p>
-            <a class="btn primary-large" href="https://www.instagram.com/koeduko/" target="_blank" rel="noreferrer">
-              Síguenos en Instagram para no perderte las novedades
-            </a>
+
+            <h1 class="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
+              Genera actividades <span class="text-koOrange">LOMLOE</span> en minutos.
+            </h1>
+
+            <p class="mt-4 text-base text-white/75 md:text-lg">
+              KOEDUKO te ayuda a crear propuestas listas para aula con alineación curricular,
+              fichas imprimibles y un esquema de evaluación claro.
+            </p>
+
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                id="cta"
+                href="#"
+                class="inline-flex items-center justify-center rounded-xl bg-koOrange px-5 py-3 text-sm font-semibold hover:opacity-90"
+              >
+                Descargar en Android (próximamente)
+              </a>
+              <a
+                href="#como-funciona"
+                class="inline-flex items-center justify-center rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold text-white hover:bg-white/15 ring-soft"
+              >
+                Ver cómo funciona
+              </a>
+            </div>
+
+            <div class="mt-6 grid grid-cols-3 gap-3 text-xs text-white/70">
+              <div class="rounded-xl bg-white/5 p-3 ring-soft">
+                <div class="text-white font-semibold">Ahorro de tiempo</div>
+                <div class="mt-1">De idea a actividad lista</div>
+              </div>
+              <div class="rounded-xl bg-white/5 p-3 ring-soft">
+                <div class="text-white font-semibold">Trazabilidad</div>
+                <div class="mt-1">Criterios / saberes</div>
+              </div>
+              <div class="rounded-xl bg-white/5 p-3 ring-soft">
+                <div class="text-white font-semibold">Imprimible</div>
+                <div class="mt-1">PDF con fichas</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mockup -->
+          <div class="relative">
+            <div class="rounded-2xl bg-white/5 p-4 ring-soft">
+              <div class="rounded-xl bg-white/5 p-4 ring-soft">
+                <div class="flex items-center justify-between">
+                  <div class="text-sm font-semibold">Ejemplo (vista rápida)</div>
+                  <span class="rounded-full bg-koOrange/20 px-2 py-1 text-xs text-koOrange">BETA</span>
+                </div>
+
+                <div class="mt-4 space-y-3 text-sm">
+                  <div class="rounded-xl bg-white/5 p-3 ring-soft">
+                    <div class="font-semibold">Título</div>
+                    <div class="text-white/70">“Exploradores del Pirineo: ecosistemas y convivencia”</div>
+                  </div>
+
+                  <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="rounded-xl bg-white/5 p-3 ring-soft">
+                      <div class="font-semibold">Duración</div>
+                      <div class="text-white/70">45–60 min</div>
+                    </div>
+                    <div class="rounded-xl bg-white/5 p-3 ring-soft">
+                      <div class="font-semibold">Grupo</div>
+                      <div class="text-white/70">20 alumnos</div>
+                    </div>
+                  </div>
+
+                  <div class="rounded-xl bg-white/5 p-3 ring-soft">
+                    <div class="font-semibold">Incluye</div>
+                    <ul class="mt-2 list-disc pl-5 text-white/70 space-y-1">
+                      <li>Pasos + materiales</li>
+                      <li>Criterios y evidencias</li>
+                      <li>Ficha imprimible (PDF)</li>
+                    </ul>
+                  </div>
+
+                  <div class="rounded-xl bg-white/5 p-3 ring-soft">
+                    <div class="font-semibold">Salida</div>
+                    <div class="text-white/70">PDF para compartir (WhatsApp/Drive) y guardar en historial</div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="mt-4 text-xs text-white/60">
+                Sustituye este mockup por capturas reales cuando quieras (recomendado).
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- CONTACTO -->
-      <section class="section alt">
-        <div class="container">
-          <div class="contact-wrapper">
-            <h2>¿Eres docente o centro educativo y quieres saber más?</h2>
-            <form class="contact-form" action="mailto:santiagoblas. escritor@gmail.com" method="post" enctype="text/plain">
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" required />
-              </div>
-              
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              
-              <div class="form-group">
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-              </div>
-              
-              <button type="submit" class="btn primary">Enviar mensaje</button>
-            </form>
+      <!-- Logos / proof -->
+      <section class="mx-auto max-w-6xl px-4 pb-10">
+        <div class="rounded-2xl bg-white/5 p-6 ring-soft">
+          <div class="grid gap-4 md:grid-cols-3 md:items-center">
+            <p class="text-sm text-white/70">
+              Enfoque: docentes de Primaria que necesitan <span class="text-white">rapidez</span> y
+              <span class="text-white">rigor curricular</span>.
+            </p>
+            <div class="md:col-span-2 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 ring-soft">LOMLOE</div>
+              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 ring-soft">Navarra</div>
+              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 ring-soft">PDF</div>
+              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 ring-soft">BETA</div>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- How it works -->
+      <section id="como-funciona" class="mx-auto max-w-6xl px-4 py-12">
+        <h2 class="text-2xl font-semibold tracking-tight">Cómo funciona</h2>
+        <p class="mt-2 max-w-2xl text-white/70">
+          Un flujo simple: eliges curso/área y la idea; KOEDUKO devuelve una propuesta estructurada y exportable.
+        </p>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+          <div class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <div class="text-koOrange font-semibold">1) Pides</div>
+            <p class="mt-2 text-sm text-white/70">Idea, curso, área, duración y contexto (opcional).</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <div class="text-koOrange font-semibold">2) Generas</div>
+            <p class="mt-2 text-sm text-white/70">Actividad con pasos, materiales, saberes y criterios.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <div class="text-koOrange font-semibold">3) Exportas</div>
+            <p class="mt-2 text-sm text-white/70">PDF listo para imprimir/compartir y guardar en historial.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- For who -->
+      <section id="para-quien" class="mx-auto max-w-6xl px-4 py-12">
+        <div class="grid gap-8 md:grid-cols-2 md:items-center">
+          <div>
+            <h2 class="text-2xl font-semibold tracking-tight">Para quién</h2>
+            <p class="mt-2 text-white/70">
+              Pensado para profes que quieren resultados accionables, con lenguaje curricular correcto y sin humo.
+            </p>
+
+            <ul class="mt-6 space-y-3 text-sm text-white/75">
+              <li class="flex gap-2">
+                <span class="mt-1 h-2 w-2 rounded-full bg-koOrange"></span>
+                Tutorías, proyectos, refuerzo, situaciones de aprendizaje y tareas de aula.
+              </li>
+              <li class="flex gap-2">
+                <span class="mt-1 h-2 w-2 rounded-full bg-koOrange"></span>
+                Alineación a criterios/saberes para justificar la programación.
+              </li>
+              <li class="flex gap-2">
+                <span class="mt-1 h-2 w-2 rounded-full bg-koOrange"></span>
+                Exportación a PDF para evidencias, informes y comunicación.
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <h3 class="font-semibold">Lo que NO es</h3>
+            <p class="mt-2 text-sm text-white/70">
+              No es un “generador genérico”. Priorizamos estructura clara, trazabilidad y utilidad real en aula.
+            </p>
+            <div class="mt-4 grid gap-3 sm:grid-cols-2 text-xs text-white/70">
+              <div class="rounded-xl bg-white/5 p-3 ring-soft">Sin texto vacío</div>
+              <div class="rounded-xl bg-white/5 p-3 ring-soft">Sin “relleno”</div>
+              <div class="rounded-xl bg-white/5 p-3 ring-soft">Sin pantallas eternas</div>
+              <div class="rounded-xl bg-white/5 p-3 ring-soft">Sin promesas irreales</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Differentiator -->
+      <section id="diferencial" class="mx-auto max-w-6xl px-4 py-12">
+        <h2 class="text-2xl font-semibold tracking-tight">Diferencial pedagógico</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <div class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <div class="font-semibold">Rigor LOMLOE</div>
+            <p class="mt-2 text-sm text-white/70">Nomenclatura y estructura curricular coherente.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <div class="font-semibold">Evaluación usable</div>
+            <p class="mt-2 text-sm text-white/70">Criterios + evidencias + indicadores operativos.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <div class="font-semibold">Exportación</div>
+            <p class="mt-2 text-sm text-white/70">PDF con formato limpio para imprimir/compartir.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mx-auto max-w-6xl px-4 py-12">
+        <h2 class="text-2xl font-semibold tracking-tight">Preguntas frecuentes</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <details class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <summary class="cursor-pointer font-semibold">¿Está ya en Play Store?</summary>
+            <p class="mt-2 text-sm text-white/70">
+              Aún no. La landing indica “próximamente” para evitar expectativas falsas. Puedes activar un formulario
+              de lista de espera si quieres.
+            </p>
+          </details>
+
+          <details class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <summary class="cursor-pointer font-semibold">¿Para qué cursos sirve?</summary>
+            <p class="mt-2 text-sm text-white/70">
+              El foco actual es Primaria (Navarra). Se ampliará a más territorios y etapas en fases posteriores.
+            </p>
+          </details>
+
+          <details class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <summary class="cursor-pointer font-semibold">¿Puedo usarlo sin internet?</summary>
+            <p class="mt-2 text-sm text-white/70">
+              La generación requiere conexión; el historial y los PDFs pueden mantenerse accesibles según configuración.
+            </p>
+          </details>
+
+          <details class="rounded-2xl bg-white/5 p-6 ring-soft">
+            <summary class="cursor-pointer font-semibold">¿Cómo contacto?</summary>
+            <p class="mt-2 text-sm text-white/70">
+              Añade tu email de soporte en el footer para pilotos y centros.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t border-white/10">
+        <div class="mx-auto max-w-6xl px-4 py-10">
+          <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div class="text-sm text-white/70">
+              <div class="font-semibold text-white">KOEDUKO</div>
+              <div class="mt-1">Rigor curricular · rapidez · exportación a PDF</div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 text-sm">
+              <a class="rounded-xl bg-white/5 px-3 py-2 text-white/80 hover:text-white hover:bg-white/10 ring-soft" href="#como-funciona">Cómo funciona</a>
+              <a class="rounded-xl bg-white/5 px-3 py-2 text-white/80 hover:text-white hover:bg-white/10 ring-soft" href="#faq">FAQ</a>
+              <a class="rounded-xl bg-white/5 px-3 py-2 text-white/80 hover:text-white hover:bg-white/10 ring-soft" href="https://www.instagram.com/koeduko/" target="_blank" rel="noreferrer">Instagram</a>
+            </div>
+          </div>
+
+          <div class="mt-8 text-xs text-white/50">
+            © <span id="year"></span> KOEDUKO · BETA
+          </div>
+        </div>
+      </footer>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container footer-content">
-        <p>© KOEDUKO — Herramientas educativas para Primaria</p>
-        <a href="https://www.instagram.com/koeduko/" target="_blank" rel="noreferrer">Instagram @koeduko</a>
-      </div>
-    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

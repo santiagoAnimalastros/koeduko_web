@@ -102,10 +102,17 @@
         <a href="#para" class="hover:text-koPrimary">Para quién</a>
         <a href="#enfoque" class="hover:text-koPrimary">Enfoque</a>
         <a href="#faq" class="hover:text-koPrimary">FAQ</a>
+
+        <!-- NUEVO: vía de contacto directa -->
+        <a href="mailto:info@koeduko.com?subject=KOEDUKO%20-%20Contacto" class="hover:text-koPrimary">
+          Contacto
+        </a>
       </nav>
 
-      <a href="#cta" class="bg-koPrimary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-koSecondary">
-        Probar (BETA)
+      <!-- NUEVO: botón principal de contacto (email) -->
+      <a href="mailto:info@koeduko.com?subject=KOEDUKO%20-%20Contacto"
+        class="bg-koPrimary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-koSecondary">
+        Contactar
       </a>
     </div>
   </header>
@@ -136,6 +143,12 @@
           <button disabled class="border border-gray-300 px-6 py-3 rounded-lg text-koMedium cursor-not-allowed">
             iOS · Próximamente
           </button>
+
+          <!-- NUEVO: CTA de contacto visible en hero -->
+          <a href="mailto:info@koeduko.com?subject=KOEDUKO%20-%20Contacto"
+            class="bg-white border border-gray-300 px-6 py-3 rounded-lg text-koInk font-semibold hover:border-koPrimary">
+            Escribir a KOEDUKO
+          </a>
         </div>
       </div>
 
@@ -238,9 +251,12 @@
 
   <!-- FOOTER -->
   <footer class="bg-white border-t py-12">
-    <div class="mx-auto max-w-6xl px-4 flex justify-between items-center text-sm text-koMedium">
+    <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-koMedium">
       <span>© <span id="year"></span> KOEDUKO · BETA</span>
       <span>Educación · Rigor · Tiempo</span>
+
+      <!-- NUEVO: email en texto plano (NO clicable) -->
+      <span>Contacto: info@koeduko.com</span>
     </div>
   </footer>
 

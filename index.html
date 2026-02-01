@@ -4,6 +4,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>KOEDUKO | Actividades LOMLOE en minutos para Primaria</title>
+  <meta name="description"
+    content="Genera actividades, fichas y evaluación en PDF alineadas con LOMLOE. KOEDUKO ahorra tiempo al profesorado con estructura clara y lista para el aula real. BETA." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://koeduko.com/" />
+
+  <!-- Theme color (mobile browser) -->
+  <meta name="theme-color" content="#FF6F3C" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="KOEDUKO | Actividades LOMLOE en minutos" />
+  <meta property="og:description"
+    content="Actividades, fichas y evaluación en PDF con rigor LOMLOE. Menos preparación, más tiempo para enseñar." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://koeduko.com/" />
+  <meta property="og:image" content="https://koeduko.com/assets/og/og-koeduko.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KOEDUKO | Actividades LOMLOE en minutos" />
+  <meta name="twitter:description"
+    content="Genera actividades y evaluación en PDF alineadas con LOMLOE. Diseñado para el aula real." />
+  <meta name="twitter:image" content="https://koeduko.com/assets/og/og-koeduko.png" />
+
+  <!-- Favicons (ajusta si cambian nombres) -->
+  <link rel="icon" type="image/png" href="assets/favicon/KO! favicon 2.png" />
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBVN12B7HJ"></script>
   <script>
@@ -12,17 +44,6 @@
     gtag('js', new Date());
     gtag('config', 'G-MBVN12B7HJ');
   </script>
-
-  <title>KOEDUKO — Actividades prácticas para Educación Primaria</title>
-  <meta name="description"
-    content="KOEDUKO genera propuestas y actividades prácticas para Educación Primaria. Ahorra tiempo de preparación, aporta rigor curricular (marco LOMLOE) y evaluaciones claras. Próximamente en Android y iOS." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="KOEDUKO — Actividades prácticas para Educación Primaria" />
-  <meta property="og:description"
-    content="Propuestas y actividades prácticas para docentes de Educación Primaria. Marco LOMLOE y evaluaciones claras." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://koeduko.com" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,46 +72,66 @@
   </script>
 
   <style>
-    /* Suaviza scroll + evita saltos */
     html {
       scroll-behavior: smooth;
       font-family: 'Inter', system-ui, sans-serif;
     }
 
-    /* Sombras suaves para cards */
     .card-shadow {
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
     }
 
     .card-shadow:hover {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.10);
+      transform: translateY(-2px);
     }
 
-    /* Mockup móviles (simple, sin librerías) */
-    .phone {
-      border-radius: 28px;
-      padding: 14px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .05));
-      border: 1px solid rgba(255, 255, 255, .14);
-    }
-
-    .phone img {
-      width: 100%;
-      height: auto;
-      border-radius: 18px;
-      display: block;
-      border: 1px solid rgba(255, 255, 255, .10);
+    .soft-grid {
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(255, 111, 60, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(255, 138, 61, 0.10) 0%, transparent 42%),
+        radial-gradient(circle at 50% 90%, rgba(255, 111, 60, 0.08) 0%, transparent 45%);
     }
   </style>
+
+  <!-- Structured Data (SEO) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "KOEDUKO",
+          "url": "https://koeduko.com/",
+          "sameAs": ["https://www.instagram.com/koeduko/"],
+          "logo": "https://koeduko.com/assets/og/og-koeduko.png"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "KOEDUKO",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Android, iOS",
+          "url": "https://koeduko.com/",
+          "description": "Genera actividades, fichas y evaluación en PDF alineadas con LOMLOE para Educación Primaria. Diseñado para el aula real.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/PreOrder"
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body class="bg-white text-koDark antialiased">
   <!-- Top bar -->
-  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm shadow-sm">
+  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur-md">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
       <a href="#top" class="flex items-center gap-3">
-        <img src="/assets/favicon/KO! favicon 2.png" alt="KOEDUKO" class="h-10 w-10 object-contain" loading="eager" />
+        <img src="assets/favicon/KO! favicon 2.png" alt="KOEDUKO" class="h-10 w-10 object-contain" loading="eager" />
         <div class="leading-tight">
           <div class="font-semibold tracking-tight text-koDark">KOEDUKO</div>
           <div class="text-xs text-koMedium">Pensada para el aula real</div>
@@ -119,54 +160,80 @@
 
   <!-- Hero -->
   <main id="top" class="relative">
-    <section class="mx-auto max-w-6xl px-4 pt-16 pb-12 md:pt-24 md:pb-16">
-      <div class="max-w-4xl mx-auto text-center">
-        <p
-          class="inline-flex items-center gap-2 rounded-full bg-koLight px-4 py-2 text-xs text-koMedium border border-gray-200">
-          <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-          BETA · Educación Primaria · Marco LOMLOE
-        </p>
+    <section class="soft-grid">
+      <div class="mx-auto max-w-6xl px-4 pt-14 pb-10 md:pt-20 md:pb-14">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <!-- Copy -->
+          <div class="text-center lg:text-left">
+            <p
+              class="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-xs text-koMedium border border-gray-200">
+              <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+              BETA · Educación Primaria · Marco LOMLOE
+            </p>
 
-        <h1 class="mt-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-koDark">
-          La herramienta <span class="text-koPrimary">pensada para docentes de Educación Primaria</span>, lista para
-          usar.
-        </h1>
+            <h1 class="mt-6 text-4xl font-bold tracking-tight md:text-5xl text-koDark">
+              Actividades LOMLOE en minutos.
+              <span class="text-koPrimary">Lista para el aula real.</span>
+            </h1>
 
-        <p class="mt-6 text-lg text-koMedium md:text-xl max-w-3xl mx-auto leading-relaxed">
-          KOEDUKO te ayuda a generar propuestas y actividades prácticas con rigor curricular (marco LOMLOE) y
-          evaluaciones claras. Menos búsquedas eternas, más tiempo para enseñar.
-        </p>
+            <p class="mt-5 text-lg text-koMedium md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              KOEDUKO genera actividades, fichas y evaluación en PDF con estructura clara y lenguaje curricular correcto.
+              Menos preparación. Más tiempo para enseñar.
+            </p>
 
-        <div id="cta" class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
-          <button type="button" disabled aria-disabled="true" data-track="android"
-            class="inline-flex items-center justify-center gap-2 rounded-lg bg-koPrimary/80 px-6 py-3 text-base font-semibold text-white opacity-70 cursor-not-allowed"
-            title="Próximamente">
-            <span aria-hidden="true" class="inline-flex">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M7.2 8.2l-1.3-2.3c-.1-.2 0-.4.1-.5.2-.1.4 0 .5.1l1.4 2.4c1-.5 2.1-.7 3.3-.7s2.3.2 3.3.7l1.4-2.4c.1-.2.3-.2.5-.1.2.1.2.3.1.5l-1.3 2.3c1 .7 1.7 1.7 2 2.9H5.2c.3-1.2 1-2.2 2-2.9zM6 12.2v6c0 .6.5 1.1 1.1 1.1H8v-7.1H6zm10 0v7.1h.9c.6 0 1.1-.5 1.1-1.1v-6h-2zM9 12.2v7.1h6v-7.1H9zM8.2 7.2c.3 0 .6-.3.6-.6S8.5 6 8.2 6s-.6.3-.6.6.3.6.6.6zm7.6 0c.3 0 .6-.3.6-.6S16.1 6 15.8 6s-.6.3-.6.6.3.6.6.6z" />
-              </svg>
-            </span>
-            Android · Próximamente
-          </button>
-          <button type="button" disabled aria-disabled="true" data-track="ios"
-            class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-gray-300 bg-white px-6 py-3 text-base font-semibold text-koMedium opacity-70 cursor-not-allowed"
-            title="Próximamente">
-            <span aria-hidden="true" class="inline-flex">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M16.7 13.2c0-2 1.6-3 1.7-3.1-1-1.5-2.6-1.7-3.1-1.7-1.3-.1-2.5.8-3.2.8s-1.7-.8-2.8-.8c-1.4 0-2.7.8-3.4 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.1 2.6 2.1 1 0 1.4-.7 2.6-.7 1.2 0 1.5.7 2.6.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.2-.1 0-2.2-.8-2.2-3.1zM14.6 6.7c.6-.8 1.1-1.9 1-3-1 0-2.1.7-2.7 1.5-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.6 2.7-1.4z" />
-              </svg>
-            </span>
-            iOS · Próximamente
-          </button>
+            <div id="cta" class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
+              <button type="button" disabled aria-disabled="true" data-track="android"
+                class="inline-flex items-center justify-center gap-2 rounded-lg bg-koPrimary/80 px-6 py-3 text-base font-semibold text-white opacity-70 cursor-not-allowed"
+                title="Próximamente">
+                <span aria-hidden="true" class="inline-flex">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M7.2 8.2l-1.3-2.3c-.1-.2 0-.4.1-.5.2-.1.4 0 .5.1l1.4 2.4c1-.5 2.1-.7 3.3-.7s2.3.2 3.3.7l1.4-2.4c.1-.2.3-.2.5-.1.2.1.2.3.1.5l-1.3 2.3c1 .7 1.7 1.7 2 2.9H5.2c.3-1.2 1-2.2 2-2.9zM6 12.2v6c0 .6.5 1.1 1.1 1.1H8v-7.1H6zm10 0v7.1h.9c.6 0 1.1-.5 1.1-1.1v-6h-2zM9 12.2v7.1h6v-7.1H9zM8.2 7.2c.3 0 .6-.3.6-.6S8.5 6 8.2 6s-.6.3-.6.6.3.6.6.6zm7.6 0c.3 0 .6-.3.6-.6S16.1 6 15.8 6s-.6.3-.6.6.3.6.6.6z" />
+                  </svg>
+                </span>
+                Android · Próximamente
+              </button>
+
+              <button type="button" disabled aria-disabled="true" data-track="ios"
+                class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-gray-300 bg-white px-6 py-3 text-base font-semibold text-koMedium opacity-70 cursor-not-allowed"
+                title="Próximamente">
+                <span aria-hidden="true" class="inline-flex">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M16.7 13.2c0-2 1.6-3 1.7-3.1-1-1.5-2.6-1.7-3.1-1.7-1.3-.1-2.5.8-3.2.8s-1.7-.8-2.8-.8c-1.4 0-2.7.8-3.4 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.1 2.6 2.1 1 0 1.4-.7 2.6-.7 1.2 0 1.5.7 2.6.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.2-.1 0-2.2-.8-2.2-3.1zM14.6 6.7c.6-.8 1.1-1.9 1-3-1 0-2.1.7-2.7 1.5-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.6 2.7-1.4z" />
+                  </svg>
+                </span>
+                iOS · Próximamente
+              </button>
+
+              <a href="#como-funciona"
+                class="inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold text-koPrimary hover:bg-white/70 border border-koPrimary/20 transition-colors">
+                Cómo funciona
+              </a>
+            </div>
+
+            <p class="mt-4 text-xs text-koMedium">
+              Sin humo: estructura clara, PDF listo y enfoque docente.
+            </p>
+          </div>
+
+          <!-- Hero image: KOEDUKO en clase -->
+          <div class="relative">
+            <div class="rounded-2xl bg-white/70 border border-gray-200 card-shadow overflow-hidden">
+              <img src="assets/web/koeduko-en-clase.jpg"
+                alt="KOEDUKO en clase: docente trabajando con materiales en el aula"
+                class="w-full h-auto block" loading="eager" />
+            </div>
+            <div class="mt-4 flex items-center justify-center lg:justify-end gap-2 text-xs text-koMedium">
+              <span class="inline-block h-2 w-2 rounded-full bg-koPrimary"></span>
+              Imagen: KOEDUKO en clase (sustituye pantallas de app como protagonista)
+            </div>
+          </div>
         </div>
-
-
       </div>
     </section>
 
-    <!-- Logos / proof -->
+    <!-- Proof / value tiles -->
     <section class="mx-auto max-w-6xl px-4 pb-12">
       <div class="rounded-2xl bg-koLight p-8 border border-gray-200 card-shadow">
         <div class="grid gap-8 md:grid-cols-3 md:items-center">
@@ -177,21 +244,17 @@
               class="text-koDark font-semibold">evaluaciones claras</span>.
           </p>
           <div class="md:col-span-2 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <div
-              class="rounded-xl bg-white p-4 text-center text-xs text-koDark font-medium border border-gray-100 shadow-sm">
+            <div class="rounded-xl bg-white p-4 text-center text-xs text-koDark font-medium border border-gray-100 shadow-sm">
               <span aria-hidden="true" class="block text-lg mb-1">⏱️</span> Tiempo
             </div>
-            <div
-              class="rounded-xl bg-white p-4 text-center text-xs text-koDark font-medium border border-gray-100 shadow-sm">
+            <div class="rounded-xl bg-white p-4 text-center text-xs text-koDark font-medium border border-gray-100 shadow-sm">
               <span aria-hidden="true" class="block text-lg mb-1">⚖️</span> Marco legal
             </div>
-            <div
-              class="rounded-xl bg-white p-4 text-center text-xs text-koDark font-medium border border-gray-100 shadow-sm">
+            <div class="rounded-xl bg-white p-4 text-center text-xs text-koDark font-medium border border-gray-100 shadow-sm">
               <span aria-hidden="true" class="block text-lg mb-1">🔍</span> Claridad
             </div>
-            <div
-              class="rounded-xl bg-white p-4 text-center text-xs text-koDark font-medium border border-gray-100 shadow-sm">
-              <span aria-hidden="true" class="block text-lg mb-1">📄</span> Documentos
+            <div class="rounded-xl bg-white p-4 text-center text-xs text-koDark font-medium border border-gray-100 shadow-sm">
+              <span aria-hidden="true" class="block text-lg mb-1">📄</span> PDF listo
             </div>
           </div>
         </div>
@@ -214,7 +277,7 @@
             <div class="text-koPrimary font-bold text-xl mb-2">1) Pides</div>
             <p class="text-sm text-koMedium mb-6">Idea, curso, área, duración y contexto (opcional).</p>
             <div class="mt-auto rounded-xl overflow-hidden border border-gray-200 bg-white">
-              <img src="/assets/web/koeduko pantallas  (1).jpeg" alt="Crear actividad" class="w-full h-auto block" />
+              <img src="assets/web/koeduko pantallas  (1).jpeg" alt="Crear actividad" class="w-full h-auto block" />
             </div>
           </div>
         </div>
@@ -223,7 +286,7 @@
             <div class="text-koPrimary font-bold text-xl mb-2">2) Generas</div>
             <p class="text-sm text-koMedium mb-6">Actividad con pasos, materiales, saberes y criterios.</p>
             <div class="mt-auto rounded-xl overflow-hidden border border-gray-200 bg-white">
-              <img src="/assets/web/koeduko_pantalla_gen.png" alt="Generando actividad" class="w-full h-auto block" />
+              <img src="assets/web/koeduko_pantalla_gen.png" alt="Generando actividad" class="w-full h-auto block" />
             </div>
           </div>
         </div>
@@ -232,7 +295,7 @@
             <div class="text-koPrimary font-bold text-xl mb-2">3) Exportas</div>
             <p class="text-sm text-koMedium mb-6">PDF listo para imprimir/compartir y guardar en historial.</p>
             <div class="mt-auto rounded-xl overflow-hidden border border-gray-200 bg-white">
-              <img src="/assets/web/koeduko pantallas  (3).jpeg" alt="Historial" class="w-full h-auto block" />
+              <img src="assets/web/koeduko pantallas  (3).jpeg" alt="Historial" class="w-full h-auto block" />
             </div>
           </div>
         </div>
@@ -245,7 +308,7 @@
         <div class="bg-white p-8 rounded-2xl border border-gray-100 card-shadow">
           <h2 class="text-2xl font-bold tracking-tight text-koDark">Para quién</h2>
           <p class="mt-4 text-koMedium">
-            Pensado para profes que quieren resultados prácticos, con lenguaje curricular correcto y sin humo.
+            Para profes que quieren resultados prácticos, con lenguaje curricular correcto y sin humo.
           </p>
 
           <ul class="mt-8 space-y-4">
@@ -265,13 +328,13 @@
               <div class="mt-1 h-5 w-5 rounded-full bg-koPrimary/10 flex items-center justify-center shrink-0">
                 <div class="h-2 w-2 rounded-full bg-koPrimary"></div>
               </div>
-              <span class="text-sm text-koMedium">Exportación a PDF para evidencias, informes y comunicación.</span>
+              <span class="text-sm text-koMedium">Exportación a PDF para evidencias e informes.</span>
             </li>
             <li class="flex items-start gap-3">
               <div class="mt-1 h-5 w-5 rounded-full bg-koPrimary/10 flex items-center justify-center shrink-0">
                 <div class="h-2 w-2 rounded-full bg-koPrimary"></div>
               </div>
-              <span class="text-sm text-koMedium">Actividades pensadas para sesiones de hasta 120 minutos.</span>
+              <span class="text-sm text-koMedium">Actividades pensadas para sesiones reales (hasta 120 min).</span>
             </li>
           </ul>
         </div>
@@ -279,76 +342,47 @@
         <div class="bg-koLight p-8 rounded-2xl border border-gray-200 border-dashed">
           <h3 class="font-bold text-koDark text-xl">Lo que NO es KOEDUKO</h3>
           <p class="mt-4 text-koMedium leading-relaxed">
-            "Koeduko no es un 'generador genérico'.<br>
-            Priorizamos una estructura clara, trazabilidad pedagógica y utilidad real en el aula.<br>
-            Tampoco es un chat GPT educativo."
+            KOEDUKO no es un “generador genérico”. Priorizamos estructura, trazabilidad pedagógica y utilidad real.
+            Tampoco es un “chat educativo”: aquí mandan el aula y el currículo.
           </p>
-          <div class="mt-8 grid gap-4 sm:grid-cols-2 opacity-50">
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 opacity-60">
             <div class="bg-white p-3 rounded-xl text-xs text-koMedium border border-gray-200">Sin texto vacío</div>
             <div class="bg-white p-3 rounded-xl text-xs text-koMedium border border-gray-200">Sin “relleno”</div>
-            <div class="bg-white p-3 rounded-xl text-xs text-koMedium border border-gray-200">Sin pantallas eternas
-            </div>
-            <div class="bg-white p-3 rounded-xl text-xs text-koMedium border border-gray-200">Sin promesas irreales
-            </div>
+            <div class="bg-white p-3 rounded-xl text-xs text-koMedium border border-gray-200">Sin pantallas eternas</div>
+            <div class="bg-white p-3 rounded-xl text-xs text-koMedium border border-gray-200">Sin promesas irreales</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Differentiator / Enfoque -->
+    <!-- Enfoque -->
     <section id="enfoque" class="mx-auto max-w-6xl px-4 py-16 scroll-mt-20">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold tracking-tight text-koDark">Nuestro Enfoque</h2>
-      </div>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl bg-white p-8 border border-gray-100 card-shadow text-center flex flex-col items-center">
-          <div class="text-4xl mb-4 p-4 bg-koLight rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="#FF6F3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-timer">
-              <path d="M10 2h4" />
-              <path d="M12 14v-4" />
-              <path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6" />
-              <path d="M9 17H4v5" />
-            </svg>
-          </div>
-          <div class="font-bold text-koDark text-lg">Ahorro de tiempo</div>
-          <div class="mt-2 h-1 w-12 bg-koPrimary rounded-full"></div>
-        </div>
-        <div class="rounded-2xl bg-white p-8 border border-gray-100 card-shadow text-center flex flex-col items-center">
-          <div class="text-4xl mb-4 p-4 bg-koLight rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="#FF6F3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-book-open">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-            </svg>
-          </div>
-          <div class="font-bold text-koDark text-lg">Rigor curricular</div>
-          <div class="mt-2 h-1 w-12 bg-koPrimary rounded-full"></div>
-        </div>
-        <div class="rounded-2xl bg-white p-8 border border-gray-100 card-shadow text-center flex flex-col items-center">
-          <div class="text-4xl mb-4 p-4 bg-koLight rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="#FF6F3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-clipboard-check">
-              <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-              <path d="m9 14 2 2 4-4" />
-            </svg>
-          </div>
-          <div class="font-bold text-koDark text-lg">Evaluaciones claras</div>
-          <div class="mt-2 h-1 w-12 bg-koPrimary rounded-full"></div>
-        </div>
+        <h2 class="text-3xl font-bold tracking-tight text-koDark">Nuestro enfoque</h2>
+        <p class="mt-4 text-koMedium max-w-2xl mx-auto">
+          Ahorro de tiempo, rigor curricular y evaluación clara. Sin adornos.
+        </p>
       </div>
 
-      <div class="mt-12 rounded-2xl bg-koPrimary/5 p-8 border border-koPrimary/10">
-        <div class="text-xs font-bold text-koPrimary tracking-widest uppercase mb-4">Dato real (cuestionario)</div>
-        <p class="text-lg text-koDark leading-relaxed italic">
-          “Aproximadamente me costaría <span class="text-koPrimary font-bold">6 horas</span> preparar la actividad y
-          <span class="text-koPrimary font-bold">1 hora</span> más para realizar el informe de evaluación.”
-        </p>
-        <p class="mt-6 text-sm text-koMedium">— Docente de Educación Primaria</p>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl bg-white p-8 border border-gray-100 card-shadow text-center flex flex-col items-center">
+          <div class="text-4xl mb-4 p-4 bg-koLight rounded-full">⏱️</div>
+          <div class="font-bold text-koDark text-lg">Ahorro de tiempo</div>
+          <div class="mt-2 h-1 w-12 bg-koPrimary rounded-full"></div>
+          <p class="mt-4 text-sm text-koMedium">Reduce la preparación repetitiva y estructura la propuesta en minutos.</p>
+        </div>
+        <div class="rounded-2xl bg-white p-8 border border-gray-100 card-shadow text-center flex flex-col items-center">
+          <div class="text-4xl mb-4 p-4 bg-koLight rounded-full">⚖️</div>
+          <div class="font-bold text-koDark text-lg">Rigor curricular</div>
+          <div class="mt-2 h-1 w-12 bg-koPrimary rounded-full"></div>
+          <p class="mt-4 text-sm text-koMedium">Lenguaje curricular correcto y enfoque alineado con LOMLOE.</p>
+        </div>
+        <div class="rounded-2xl bg-white p-8 border border-gray-100 card-shadow text-center flex flex-col items-center">
+          <div class="text-4xl mb-4 p-4 bg-koLight rounded-full">📄</div>
+          <div class="font-bold text-koDark text-lg">PDF listo</div>
+          <div class="mt-2 h-1 w-12 bg-koPrimary rounded-full"></div>
+          <p class="mt-4 text-sm text-koMedium">Exporta y comparte sin fricción: actividad y evaluación listas.</p>
+        </div>
       </div>
     </section>
 
@@ -356,75 +390,23 @@
     <section id="faq" class="mx-auto max-w-6xl px-4 py-16 scroll-mt-20">
       <h2 class="text-3xl font-bold tracking-tight text-koDark text-center mb-12">Preguntas frecuentes</h2>
       <div class="grid gap-6 md:grid-cols-2">
-        <details
-          class="group rounded-2xl bg-white p-6 border border-gray-100 card-shadow transition-all duration-300 open:ring-1 open:ring-koPrimary/20">
+        <details class="group rounded-2xl bg-white p-6 border border-gray-100 card-shadow">
           <summary class="cursor-pointer font-bold text-koDark flex justify-between items-center list-none">
             ¿Está ya en Play Store?
-            <span class="text-koPrimary transition-transform group-open:rotate-180">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
-              </svg>
-            </span>
+            <span class="text-koPrimary transition-transform group-open:rotate-180">⌄</span>
           </summary>
           <p class="mt-4 text-sm text-koMedium leading-relaxed">
-            Aún no. La landing indica “próximamente” para evitar expectativas falsas. Puedes activar un formulario de
-            lista de espera si quieres.
+            Aún no. La web indica “próximamente” para no crear expectativas falsas mientras se cierra la BETA.
           </p>
         </details>
 
-        <details
-          class="group rounded-2xl bg-white p-6 border border-gray-100 card-shadow transition-all duration-300 open:ring-1 open:ring-koPrimary/20">
-          <summary class="cursor-pointer font-bold text-koDark flex justify-between items-center list-none">
-            ¿Para qué cursos sirve?
-            <span class="text-koPrimary transition-transform group-open:rotate-180">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
-              </svg>
-            </span>
-          </summary>
-          <p class="mt-4 text-sm text-koMedium leading-relaxed">
-            En esta primera versión, KOEDUKO está enfocado en Educación Primaria. Se ampliará a más territorios y etapas
-            en fases posteriores.
-          </p>
-        </details>
-
-        <details
-          class="group rounded-2xl bg-white p-6 border border-gray-100 card-shadow transition-all duration-300 open:ring-1 open:ring-koPrimary/20">
+        <details class="group rounded-2xl bg-white p-6 border border-gray-100 card-shadow">
           <summary class="cursor-pointer font-bold text-koDark flex justify-between items-center list-none">
             ¿Esto me ahorra tiempo de verdad?
-            <span class="text-koPrimary transition-transform group-open:rotate-180">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
-              </svg>
-            </span>
+            <span class="text-koPrimary transition-transform group-open:rotate-180">⌄</span>
           </summary>
           <p class="mt-4 text-sm text-koMedium leading-relaxed">
-            El objetivo es recortar la parte más costosa: buscar recursos, estructurar objetivos/pasos y preparar la
-            evaluación. En nuestro cuestionario, una docente estimó que una actividad + informe puede llevar alrededor
-            de <span class="text-koPrimary font-bold">7 horas</span>.
-          </p>
-        </details>
-
-        <details
-          class="group rounded-2xl bg-white p-6 border border-gray-100 card-shadow transition-all duration-300 open:ring-1 open:ring-koPrimary/20">
-          <summary class="cursor-pointer font-bold text-koDark flex justify-between items-center list-none">
-            ¿Puedo usarlo sin internet?
-            <span class="text-koPrimary transition-transform group-open:rotate-180">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
-              </svg>
-            </span>
-          </summary>
-          <p class="mt-4 text-sm text-koMedium leading-relaxed">
-            La generación requiere conexión; el historial y los PDFs pueden mantenerse accesibles según configuración.
+            KOEDUKO recorta lo que más pesa: búsqueda, estructura y evaluación. La intención es que prepares mejor en menos tiempo.
           </p>
         </details>
       </div>
@@ -437,7 +419,7 @@
           <div class="max-w-xs">
             <div class="font-bold text-koDark text-xl tracking-tight">KOEDUKO</div>
             <p class="mt-4 text-sm text-koMedium leading-relaxed">
-              Rigor curricular, rapidez y exportación a PDF. Pensada para el docente de Educación Primaria.
+              Actividades LOMLOE en minutos. Estructura clara, PDF listo y enfoque docente.
             </p>
           </div>
 
@@ -453,8 +435,7 @@
               <div class="text-xs font-bold text-koDark uppercase tracking-widest mb-4">Ayuda</div>
               <ul class="space-y-2 text-sm text-koMedium">
                 <li><a href="#faq" class="hover:text-koPrimary transition-colors">FAQ</a></li>
-                <li><a href="mailto:soporte@koeduko.com" class="hover:text-koPrimary transition-colors">Contacto</a>
-                </li>
+                <li><a href="mailto:soporte@koeduko.com" class="hover:text-koPrimary transition-colors">Contacto</a></li>
               </ul>
             </div>
             <div>
@@ -467,8 +448,7 @@
           </div>
         </div>
 
-        <div
-          class="mt-16 pt-8 border-t border-gray-200/50 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div class="mt-16 pt-8 border-t border-gray-200/50 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div class="text-xs text-koMedium">
             © <span id="year"></span> KOEDUKO · BETA
           </div>
@@ -489,26 +469,26 @@
     // GA4: track clicks on disabled Android/iOS buttons (intent tracking)
     document.addEventListener("DOMContentLoaded", function () {
       const buttons = document.querySelectorAll("[data-track]");
-
       buttons.forEach((button) => {
         button.addEventListener("click", function () {
           const platform = button.getAttribute("data-track");
-
           if (typeof gtag === "function") {
             gtag("event", "cta_click", {
               event_category: "download_buttons",
               event_label: platform,
               platform: platform,
-              page_location: window.location.href,
+              page_location: window.location.href
             });
           }
         });
       });
     });
   </script>
+
   <!-- Cloudflare Web Analytics -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-    data-cf-beacon='{"token": "8974ee5719874652aa1585cba762fd95"}'></script><!-- End Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "8974ee5719874652aa1585cba762fd95"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 
 </html>
